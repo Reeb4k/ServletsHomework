@@ -11,7 +11,6 @@ import java.io.PrintWriter;
 @WebServlet(urlPatterns = "/data")
 public class DataServlet extends HttpServlet {
 
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
@@ -30,6 +29,32 @@ public class DataServlet extends HttpServlet {
                 "</form></body>" +
                 "</html>");
 
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String name = req.getParameter("name");
+
+        if (name != null){
+
+            resp.setContentType("text/html");
+            PrintWriter out = resp.getWriter();
+            out.print("<html>" +
+                    "<head>" +
+                    "<title> Name entered </title>" +
+                    "</head>" +
+                    "<body>" +
+                    "<h1 align= \"center\"> You look terrific today " + name + "! </h1>" +
+                    "</body>" +
+                    "</html>");
+
+/*            resp.sendRedirect("/display");*/
+
+        } else {
+            resp.sendRedirect("/data");
+        }
 
 
     }
