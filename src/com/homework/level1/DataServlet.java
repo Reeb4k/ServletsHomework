@@ -50,7 +50,7 @@ public class DataServlet extends HttpServlet {
                     "</body>" +
                     "</html>");
 
-/*            resp.sendRedirect("/display");*/
+            resp.sendRedirect("/display"); // that line
 
         } else {
             resp.sendRedirect("/data");

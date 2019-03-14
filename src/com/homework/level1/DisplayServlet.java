@@ -21,7 +21,7 @@ public class DisplayServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServerException, IOException {
 
 
-        /*String name = req.getParameter("data");
+        String name = req.getParameter("name");
 
 resp.setContentType("text/html");
             PrintWriter out = resp.getWriter();
@@ -32,7 +32,7 @@ resp.setContentType("text/html");
                     "<body>" +
                     "<h1 align= \"center\"> You look terrific today " + name + "! </h1>" +
                     "</body>" +
-                    "</html>");*/
+                    "</html>");
 
 
 
