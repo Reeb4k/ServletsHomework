@@ -13,31 +13,28 @@ import java.rmi.ServerException;
 public class DisplayServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServerException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServerException, IOException {
 
-        String name = req.getParameter("name");
 
-        if (name != null){
+        /*String name = req.getParameter("data");
 
-            resp.setContentType("text/html");
+resp.setContentType("text/html");
             PrintWriter out = resp.getWriter();
             out.print("<html>" +
                     "<head>" +
                     "<title> Name entered </title>" +
                     "</head>" +
                     "<body>" +
-                    "<h1 align= \"center\"> You look terrific today!</h1>" +
+                    "<h1 align= \"center\"> You look terrific today " + name + "! </h1>" +
                     "</body>" +
-                    "</html>");
+                    "</html>");*/
 
-        } else {
-            resp.sendRedirect("/data");
-        }
+
 
     }
 }
