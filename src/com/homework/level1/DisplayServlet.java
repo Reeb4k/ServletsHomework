@@ -21,19 +21,20 @@ public class DisplayServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServerException, IOException {
 
 
-        String name = req.getParameter("name");
+        String name = (String) req.getSession().getAttribute("Session attribute");
 
-resp.setContentType("text/html");
-            PrintWriter out = resp.getWriter();
-            out.print("<html>" +
-                    "<head>" +
-                    "<title> Name entered </title>" +
-                    "</head>" +
-                    "<body>" +
-                    "<h1 align= \"center\"> You look terrific today " + name + "! </h1>" +
-                    "</body>" +
-                    "</html>");
-
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+        out.print("<html>" +
+                "<head>" +
+                "<title> Name entered </title>" +
+                "</head>" +
+                "<body>" +
+                "<h1 align= \"center\"> You look terrific today " + name + "! </h1>" +
+                "</body>" +
+                "<br><br> BTW normal war file is something like a ZIP archive, recognised by Java application servers" +
+                " like Tomcat, when war file is exploded, all files inside this archive are separate"+
+                "</html>");
 
 
     }
