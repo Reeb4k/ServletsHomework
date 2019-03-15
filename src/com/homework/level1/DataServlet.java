@@ -36,7 +36,7 @@ public class DataServlet extends HttpServlet {
 
         String name = req.getParameter("name");
 
-        if (name != null){
+        if (!name.isEmpty()){
 
             resp.setContentType("text/html");
             PrintWriter out = resp.getWriter();
